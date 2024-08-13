@@ -12,13 +12,17 @@ Serilog: Logging framework for capturing application logs.
 There is two project: BG.LocalWeb and BG.LocalApi. BG.LocalWeb is responsible for user management. BG.LocalApi is responsible for authors/books management.
 The backend follows a layered architecture, which consists of the following layers:
 
-### Domain Layer: Contains the core business logic, including entities and domain services. Specifications for filtering and querying data are also placed here.
+### Domain Layer:
+Contains the core business logic, including entities and domain services. Specifications for filtering and querying data are also placed here.
 
-### Application Layer: This layer contains the application’s use cases, including MediatR request handlers, queries, and commands. It orchestrates the business logic by interacting with the domain and infrastructure layers.
+### Application Layer: 
+This layer contains the application’s use cases, including MediatR request handlers, queries, and commands. It orchestrates the business logic by interacting with the domain and infrastructure layers.
 
-### Infrastructure Layer: Provides implementations for data access and external services. This includes repositories, database context configurations, and third-party service integrations.
+### Infrastructure Layer:
+Provides implementations for data access and external services. This includes repositories, database context configurations, and third-party service integrations.
 
-### API Layer: Exposes the application’s functionalities via RESTful endpoints using ASP.NET Core. It includes controllers, middleware, and Swagger documentation.
+### API Layer: 
+Exposes the application’s functionalities via RESTful endpoints using ASP.NET Core. It includes controllers, middleware, and Swagger documentation.
 
 ## Setting Up the Backend
 ### Prerequisites
