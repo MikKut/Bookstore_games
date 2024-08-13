@@ -1,0 +1,36 @@
+<div class="login-container">
+  <h2>Login to Your Account</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group" [ngClass]="{'has-error': isSubmitted && formControls['username'].invalid}">
+      <label for="username">Username</label>
+      <input id="username" type="text" formControlName="username" placeholder="Enter your username" />
+      <div *ngIf="isSubmitted && formControls['username'].errors" class="error-message">
+        <div *ngIf="formControls['username'].errors['required']">Username is required</div>
+        <div *ngIf="formControls['username'].errors['minlength']">Username must be at least 4 characters</div> <!-- Corrected 'minLength' to 'minlength' -->
+      </div>
+    </div>
+
+    <div class="form-group" [ngClass]="{'has-error': isSubmitted && formControls['password'].invalid}">
+      <label for="password">Password</label>
+      <div class="password-wrapper">
+        <input id="password" [type]="hidePassword ? 'password' : 'text'" formControlName="password" placeholder="Enter your password" />
+        <i class="toggle-password" (click)="togglePasswordVisibility()">
+          {{ hidePassword ? '👁️' : '🙈' }}
+        </i>
+      </div>
+      <div *ngIf="isSubmitted && formControls['password'].errors" class="error-message">
+        <div *ngIf="formControls['password'].errors['required']">Password is required</div>
+        <div *ngIf="formControls['password'].errors['minlength']">Password must be at least 6 characters</div> <!-- Corrected 'minLength' to 'minlength' -->
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+    <button type="submit" class="btn-primary">Login</button>
+  </form>
+
+  <div class="register-link">
+    <a routerLink="/auth/register">Don't have an account? Register here</a>
+  </div>
+</div>

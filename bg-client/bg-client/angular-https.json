@@ -1,0 +1,17 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "projects": {
+      "bookstore-client": {
+        "architect": {
+          "serve": {
+            "options": {
+              "ssl": true,
+              "sslKey": "key.pem",
+              "sslCert": "cert.pem"
+            }
+          }
+        }
+      }
+    }
+  }
+  

@@ -1,0 +1,6 @@
+@BG.LocalApi.API_HostAddress = http://localhost:5098
+
+GET {{BG.LocalApi.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
