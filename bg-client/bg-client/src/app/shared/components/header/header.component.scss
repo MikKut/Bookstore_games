@@ -1,0 +1,46 @@
+.header {
+  background-color: #1976d2;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      .logo {
+        height: 30px;
+        margin-right: 10px;
+      }
+
+      &:hover {
+        color: #ffcc00;
+      }
+    }
+
+    .navbar-nav {
+      display: flex;
+      align-items: center;
+
+      .nav-item {
+        margin-left: 1rem;
+
+        .nav-link {
+          color: white;
+          font-weight: bold;
+
+          &:hover {
+            color: #ffcc00;
+          }
+        }
+      }
+    }
+  }
+}

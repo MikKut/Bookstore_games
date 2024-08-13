@@ -1,0 +1,46 @@
+<div class="books-list-container">
+  <div class="header">
+    <h1>Books List</h1>
+    <button class="add-book-button" (click)="addBook()">Add Book</button>
+  </div>
+
+  <div class="filters">
+    <input [(ngModel)]="searchTitle" placeholder="Search by title" (ngModelChange)="filterBooks()" />
+    <select [(ngModel)]="selectedGenre" (change)="filterBooks()">
+      <option value="">All Genres</option>
+      <option *ngFor="let genre of genres" [value]="genre">{{ genre }}</option>
+    </select>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Publication Year</th>
+        <th>Genre</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{ book.title }}</td>
+        <td>{{ book.publicationYear }}</td>
+        <td>{{ book.genre }}</td>
+        <td>
+          <button class="edit-btn" (click)="editBook(book.id)">Edit</button>
+          <button class="delete-btn" (click)="deleteBook(book.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="books.length === 0" class="no-books">
+    <p>No books available.</p>
+  </div>
+  
+  <div class="pagination">
+    <button (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+</div>
